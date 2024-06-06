@@ -1,0 +1,12 @@
+These are the components needed:
+
+1. mbus meter(s)
+2. Microcontroller - STM32series
+3. Network Interface Module- ethernet module W5500
+4. M-bus Transceiver- TSS721A
+5. Power Supply
+6. LEDS
+7. Wires and connectors
+8. Passive components
+9. PCB
+10.Body
