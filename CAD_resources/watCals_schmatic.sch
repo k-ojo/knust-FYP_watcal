@@ -25952,7 +25952,7 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="C1" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="330uF"/>
 <part name="C2" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="100uF"/>
-<part name="L1" library="inductor-neosid" library_urn="urn:adsk.eagle:library:241" deviceset="SD8" device="" package3d_urn="urn:adsk.eagle:package:14649/1"/>
+<part name="L1" library="inductor-neosid" library_urn="urn:adsk.eagle:library:241" deviceset="SD8" device="" package3d_urn="urn:adsk.eagle:package:14649/1" value="100uH"/>
 <part name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="1N581*" device="" package3d_urn="urn:adsk.eagle:package:43421/1" technology="9-B"/>
 <part name="C3" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="44uC"/>
 <part name="C4" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2,5-3" package3d_urn="urn:adsk.eagle:package:5436/1" value="22uC"/>
@@ -25970,12 +25970,12 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <part name="RRIS" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="30k"/>
 <part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="220"/>
 <part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="220"/>
-<part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:15799/2"/>
-<part name="LED2" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:15799/2"/>
-<part name="LED3" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:15799/2"/>
-<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2"/>
-<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2"/>
-<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2"/>
+<part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:15799/2" value="RED"/>
+<part name="LED2" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:15799/2" value="BLUE"/>
+<part name="LED3" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="5MM" package3d_urn="urn:adsk.eagle:package:15799/2" value="GREEN"/>
+<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="1K"/>
+<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="1K"/>
+<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="1K"/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -25987,7 +25987,7 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <part name="U4" library="FYP_W5500" deviceset="W5500" device="48LQFP_W5500_WIZ-M"/>
 <part name="J3" library="J1B1211CCD" deviceset="J1B1211CCD" device=""/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="L2" library="inductor-neosid" library_urn="urn:adsk.eagle:library:241" deviceset="SD8" device="" package3d_urn="urn:adsk.eagle:package:14649/1"/>
+<part name="L2" library="inductor-neosid" library_urn="urn:adsk.eagle:library:241" deviceset="SD8" device="" package3d_urn="urn:adsk.eagle:package:14649/1" value="120 %5/50mA"/>
 <part name="C10" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="0.1u"/>
 <part name="C11" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="0.1u"/>
 <part name="C12" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="0.1u"/>
@@ -26019,13 +26019,13 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="1M"/>
 <part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="0R"/>
 <part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="C26" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="0.1u"/>
-<part name="C27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10u"/>
+<part name="C26" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="0.1uF"/>
+<part name="C27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="E2.5-6" package3d_urn="urn:adsk.eagle:package:23349/1" value="10u/16v"/>
 <part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="JP3" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP2E" device="" package3d_urn="urn:adsk.eagle:package:15452/1"/>
 <part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="0207/10" package3d_urn="urn:adsk.eagle:package:23491/2" value="10K"/>
 <part name="GND18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="Q4" library="crystal" library_urn="urn:adsk.eagle:library:204" deviceset="CRYSTAL" device="HC49S" package3d_urn="urn:adsk.eagle:package:12071/1"/>
+<part name="Q4" library="crystal" library_urn="urn:adsk.eagle:library:204" deviceset="CRYSTAL" device="HC49S" package3d_urn="urn:adsk.eagle:package:12071/1" value="8MHz"/>
 <part name="C25" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="12uF"/>
 <part name="C28" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1" value="12uF"/>
 <part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -26068,7 +26068,7 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 </instance>
 <instance part="U5" gate="A" x="2.54" y="68.58" smashed="yes">
 <attribute name="NAME" x="30.8346" y="77.6986" size="2.083" layer="95" ratio="6"/>
-<attribute name="VALUE" x="30.1952" y="75.1586" size="2.083" layer="96" ratio="6"/>
+<attribute name="VALUE" x="35.2752" y="75.1586" size="2.083" layer="96" ratio="6"/>
 </instance>
 <instance part="GND1" gate="1" x="71.12" y="96.52" smashed="yes" rot="R180">
 <attribute name="VALUE" x="73.66" y="99.06" size="1.778" layer="96" rot="R180"/>
@@ -26302,13 +26302,6 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <pinref part="U5" gate="A" pin="BAT"/>
 <wire x1="66.04" y1="50.8" x2="71.12" y2="50.8" width="0.1524" layer="91"/>
 <junction x="71.12" y="50.8"/>
-</segment>
-</net>
-<net name="PF" class="0">
-<segment>
-<pinref part="U5" gate="A" pin="PF"/>
-<wire x1="5.08" y1="58.42" x2="-5.08" y2="58.42" width="0.1524" layer="91"/>
-<label x="-5.08" y="58.42" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="BUSL2" class="0">
@@ -26650,13 +26643,6 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <label x="73.66" y="22.86" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="SCSN" class="0">
-<segment>
-<pinref part="U1" gate="A" pin="PA0-WKUP"/>
-<wire x1="96.52" y1="93.98" x2="76.2" y2="93.98" width="0.1524" layer="91"/>
-<label x="76.2" y="93.98" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="LED1" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="PA8"/>
@@ -26697,6 +26683,13 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <pinref part="U1" gate="A" pin="PB0"/>
 <wire x1="96.52" y1="50.8" x2="76.2" y2="50.8" width="0.1524" layer="91"/>
 <label x="76.2" y="50.8" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCS" class="0">
+<segment>
+<pinref part="U1" gate="A" pin="PA0-WKUP"/>
+<wire x1="96.52" y1="93.98" x2="83.82" y2="93.98" width="0.1524" layer="91"/>
+<label x="83.82" y="93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
@@ -27215,9 +27208,9 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <attribute name="NAME" x="-26.67" y="34.0614" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="-26.67" y="38.862" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R16" gate="G$1" x="-38.1" y="30.48" smashed="yes" rot="R90">
-<attribute name="NAME" x="-39.5986" y="26.67" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="-34.798" y="26.67" size="1.778" layer="96" rot="R90"/>
+<instance part="R16" gate="G$1" x="-43.18" y="27.94" smashed="yes" rot="R90">
+<attribute name="NAME" x="-44.6786" y="24.13" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-39.878" y="24.13" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="GND16" gate="1" x="-38.1" y="2.54" smashed="yes">
 <attribute name="VALUE" x="-38.1" y="0" size="1.778" layer="96"/>
@@ -27640,28 +27633,6 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <junction x="-22.86" y="25.4"/>
 </segment>
 </net>
-<net name="SCSN" class="0">
-<segment>
-<pinref part="R15" gate="G$1" pin="2"/>
-<wire x1="-35.56" y1="35.56" x2="-38.1" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="R16" gate="G$1" pin="2"/>
-<pinref part="U4" gate="A" pin="XO"/>
-<wire x1="2.54" y1="38.1" x2="-38.1" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="-38.1" y1="38.1" x2="-38.1" y2="35.56" width="0.1524" layer="91"/>
-<junction x="-38.1" y="35.56"/>
-<label x="-12.7" y="40.64" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$25" class="0">
-<segment>
-<pinref part="R16" gate="G$1" pin="1"/>
-<pinref part="C23" gate="G$1" pin="1"/>
-<wire x1="-38.1" y1="25.4" x2="-38.1" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="Q2" gate="G$1" pin="3"/>
-<wire x1="-33.02" y1="25.4" x2="-38.1" y2="25.4" width="0.1524" layer="91"/>
-<junction x="-38.1" y="25.4"/>
-</segment>
-</net>
 <net name="LINKLED" class="0">
 <segment>
 <pinref part="U4" gate="A" pin="ACTLED"/>
@@ -27688,12 +27659,6 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <pinref part="R12" gate="G$1" pin="1"/>
 <wire x1="167.64" y1="25.4" x2="167.64" y2="20.32" width="0.1524" layer="91"/>
 <label x="167.64" y="20.32" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="N$19" class="0">
-<segment>
-<pinref part="U4" gate="A" pin="SCSN"/>
-<wire x1="2.54" y1="40.64" x2="-12.7" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SCLK" class="0">
@@ -27750,6 +27715,39 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <pinref part="U4" gate="A" pin="PMODE0"/>
 <wire x1="2.54" y1="73.66" x2="-12.7" y2="73.66" width="0.1524" layer="91"/>
 <label x="-12.7" y="73.66" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCS" class="0">
+<segment>
+<pinref part="U4" gate="A" pin="SCSN"/>
+<wire x1="2.54" y1="40.64" x2="-12.7" y2="40.64" width="0.1524" layer="91"/>
+<label x="-12.7" y="40.64" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$19" class="0">
+<segment>
+<pinref part="R16" gate="G$1" pin="1"/>
+<pinref part="C23" gate="G$1" pin="1"/>
+<wire x1="-43.18" y1="22.86" x2="-43.18" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="20.32" x2="-43.18" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="15.24" x2="-38.1" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="Q2" gate="G$1" pin="3"/>
+<wire x1="-33.02" y1="25.4" x2="-35.56" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="25.4" x2="-35.56" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="-35.56" y1="20.32" x2="-43.18" y2="20.32" width="0.1524" layer="91"/>
+<junction x="-43.18" y="20.32"/>
+</segment>
+</net>
+<net name="N$36" class="0">
+<segment>
+<pinref part="R16" gate="G$1" pin="2"/>
+<wire x1="-43.18" y1="33.02" x2="-43.18" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="R15" gate="G$1" pin="2"/>
+<wire x1="-43.18" y1="35.56" x2="-35.56" y2="35.56" width="0.1524" layer="91"/>
+<pinref part="U4" gate="A" pin="XO"/>
+<wire x1="2.54" y1="38.1" x2="-43.18" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="-43.18" y1="38.1" x2="-43.18" y2="35.56" width="0.1524" layer="91"/>
+<junction x="-43.18" y="35.56"/>
 </segment>
 </net>
 </nets>
@@ -27914,20 +27912,11 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 <approved hash="104,4,48.26,40.64,U4,AVDD_6,V3.3A,,,"/>
 <approved hash="104,4,48.26,30.48,U4,AVDD,V3.3A,,,"/>
 <approved hash="104,4,2.54,30.48,U4,VDD,V3.3,,,"/>
-<approved hash="106,4,2.54,40.64,N$19,,,,,"/>
-<approved hash="106,1,5.08,58.42,PF,,,,,"/>
-<approved hash="113,3,30.48,77.4294,L1,,,,,"/>
-<approved hash="113,1,-1.20352,15.2629,X1,,,,,"/>
-<approved hash="113,1,-1.20352,25.4229,X2,,,,,"/>
-<approved hash="113,1,-1.20352,38.1229,X3,,,,,"/>
-<approved hash="113,2,104.462,69.85,LED1,,,,,"/>
-<approved hash="113,2,119.702,69.85,LED2,,,,,"/>
-<approved hash="113,2,134.942,69.85,LED3,,,,,"/>
-<approved hash="113,2,103.05,55.88,R5,,,,,"/>
-<approved hash="113,2,118.29,55.88,R6,,,,,"/>
-<approved hash="113,2,133.53,55.88,R7,,,,,"/>
-<approved hash="113,4,114.3,105.369,L2,,,,,"/>
-<approved hash="113,1,166.665,110.823,JP3,,,,,"/>
+<approved hash="113,1,-1.20798,15.2629,X1,,,,,"/>
+<approved hash="113,1,-1.20798,25.4229,X2,,,,,"/>
+<approved hash="113,1,-1.20798,38.1229,X3,,,,,"/>
+<approved hash="113,1,166.665,110.819,JP3,,,,,"/>
+<approved hash="113,1,78.74,118.4,SV1,,,,,"/>
 </errors>
 </schematic>
 </drawing>
