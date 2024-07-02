@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>M-Bus Meter Simulation</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #data { white-space: pre; }
+    </style>
+</head>
+<body>
+    <h1>M-Bus Meter Simulation</h1>
+    <button onclick="scanMeters()">Scan Meters</button>
+    <div id="data"></div>
+
+    <script>
+        async function scanMeters() {
+            const response = await fetch('/scan');
+            const result = await response.json();
+            if (result.status === 'success') {
+                document.getElementById('data').innerText = result.data;
+            } else {
+                document.getElementById('data').innerText = 'Error: ' + result.message;
+            }
+        }
+    </script>
+</body>
+</html>
