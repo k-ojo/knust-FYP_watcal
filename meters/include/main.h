@@ -11,4 +11,6 @@
 #define SLAVE "/dev/pts/3" // Change to the slave virtual port
 #define MASTER "/dev/pts/2" // Change to master port
 
+
+void configure_serial_port(int fd);
 #endif
