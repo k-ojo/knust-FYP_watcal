@@ -2,7 +2,6 @@
 
 int main()
 {
-    int m_fd = open(MASTER, O_RDWR | O_NOCTTY | O_NDELAY);
     mbus_handle *handle;
 
     handle = mbus_context_serial(MASTER);
@@ -18,8 +17,8 @@ int main()
 
     while (1) {
         send_request(handle, slave_addr, RELAY_COMMAND);
+        usleep(1000000);
     }
 
-    close(m_fd);
     return 0;
 }

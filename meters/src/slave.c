@@ -7,6 +7,7 @@ int main() {
     if (handle == NULL)
     {
         perror("Oops!\n");
+        return (1);
     } 
     return 0;
 }

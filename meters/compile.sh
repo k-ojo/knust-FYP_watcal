@@ -12,7 +12,7 @@ MASTER_FILES="src/master.c src/controllers.c"
 
 #Files for slave object
 
-SLAVE_FILES="src/slave.c src/controllers.c"
+SLAVE_FILES="src/Ex.c src/controllers.c"
 
 #compile master
 $CC -o master $MASTER_FILES $CFLAGS

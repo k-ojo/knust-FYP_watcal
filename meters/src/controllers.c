@@ -2,6 +2,40 @@
 
 
 /**
+ * initialize_frame - creates frame
+ * @frame: pointer to the M-Bus frame
+ * @type: type of the frame
+ * @address: address of the slave
+ */
+void initialize_frame(mbus_frame *frame, FrameType type, uint8_t address)
+{
+    memset(frame, 0, sizeof(mbus_frame));
+
+    if (type == RELAY_COMMAND)
+    {
+        frame->start1 = MBUS_FRAME_ACK_START;
+        frame->control = MBUS_CONTROL_MASK_SND_UD;
+        frame->address = address;
+        frame->control_information = MBUS_CONTROL_INFO_DATA_SEND | MBUS_CONTROL_MASK_DIR_M2S;
+        frame->data_size = 1;
+        frame->data[0] = 0x05;
+        frame->stop = MBUS_FRAME_STOP;
+        printf("Initialized frame for RELAY_COMMAND\n");
+    }
+    else if (type == DATA_REQUEST)
+    {
+        frame->start1 = MBUS_FRAME_ACK_START;
+        frame->control = MBUS_CONTROL_MASK_REQ_UD2 | MBUS_CONTROL_MASK_DIR_M2S;
+        frame->address = address;
+        frame->control_information = MBUS_CONTROL_INFO_DATA_SEND;
+        frame->data_size = 1;
+        frame->data[0] = 0x05;
+        frame->stop = MBUS_FRAME_STOP;
+        printf("Initialized frame for DATA_REQUEST\n");
+    }
+}
+
+/**
 * initialize_frame- creates frame
 *
 * Return- nothing
@@ -13,13 +47,12 @@ void initialize_frame(mbus_frame *frame, FrameType type, uint8_t address)
 	if (type == RELAY_COMMAND)
 	{
 		frame->start1 = MBUS_FRAME_ACK_START;
-		frame->control = MBUS_CONTROL_MASK_SND_UD;
+		frame->control = MBUS_CONTROL_MASK_SND_UD | MBUS_CONTROL_MASK_DIR_M2S;
 		frame->address = address;
-		frame->control_information = MBUS_CONTROL_INFO_DATA_SEND | MBUS_CONTROL_MASK_DIR_M2S;;
+		frame->control_information = MBUS_CONTROL_INFO_DATA_SEND;
 		frame->data_size = 1;
 		frame->data[0] = 0x05;
 		frame->stop = MBUS_FRAME_STOP;
-		printf("break");
 	}
 	else if (type == DATA_REQUEST)
     {
