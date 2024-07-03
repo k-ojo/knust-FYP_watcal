@@ -8,11 +8,11 @@ CFLAGS="-lmbus"
 
 #files for master object
 
-MASTER_FILES="master.c helper.c"
+MASTER_FILES="src/master.c src/helper.c"
 
 #Files for slave object
 
-SLAVE_FILES="slave.c helper.c"
+SLAVE_FILES="src/slave.c src/helper.c"
 
 #compile master
 $CC -o master $MASTER_FILES $CFLAGS

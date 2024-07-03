@@ -1,4 +1,4 @@
-#include "include/main.h"
+#include "../include/main.h"
 
 int main() {
     int fd = open(SLAVE, O_RDWR | O_NOCTTY | O_NDELAY);
