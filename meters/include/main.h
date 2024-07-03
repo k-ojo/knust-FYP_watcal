@@ -22,7 +22,7 @@ typedef enum
 
 void initialize_frame(mbus_frame *frame, FrameType type, uint8_t address);
 void configure_serial_port(int fd);
-int send_request(mbus_handle *handle, uint8_t address, FrameType type);
+void send_request(mbus_handle *handle, uint8_t address);
 void initialize_frame(mbus_frame *frame, FrameType type, uint8_t address);
 void initialize_slave(mbus_handle *handle, uint8_t);
 #endif
