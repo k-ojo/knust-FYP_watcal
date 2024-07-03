@@ -2,7 +2,7 @@
 
 /**
 * configure_serial_port- configuration for mbus protocol
-* @fd: input file decripter
+* @fd: input file descriptor
 * Return: nothing
 */
 void configure_serial_port(int fd) {

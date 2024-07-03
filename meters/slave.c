@@ -2,7 +2,7 @@
 
 /**
 * configure_serial_port- configure for mbus protocol
-* @fd- file decripter of simulated mbus device (vterminal)
+* @fd- file descriptor of simulated mbus device (vterminal)
 * Return- nothing
 */
 void configure_serial_port(int fd) {
