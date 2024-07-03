@@ -4,9 +4,9 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <termios.h>
-#include <libmbus/mbus.h>
+#include <mbus/mbus.h>
 
-#define DEVICE "/dev/pts/4" // Change to the slave virtual port
+#define DEVICE "/dev/pts/3" // Change to the slave virtual port
 
 void configure_serial_port(int fd) {
     struct termios options;

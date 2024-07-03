@@ -1,0 +1,7 @@
+The potocol uses:
+
+1. 8 data bits
+2. No parity
+3. One stop bit
+4. No flow control
+5. Baudrate of 2400 bps
