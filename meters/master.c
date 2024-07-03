@@ -1,13 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <termios.h>
-#include <mbus/mbus.h>
-
-#define DEVICE "/dev/pts/2" // Change to the master virtual port
-
+#include "include/watCal.h"
 
 /**
 * configure_serial_port- configuration for mbus protocol
@@ -32,7 +23,7 @@ void configure_serial_port(int fd) {
 }
 
 int main() {
-    int fd = open(DEVICE, O_RDWR | O_NOCTTY | O_NDELAY);
+    int fd = open(MASTER, O_RDWR | O_NOCTTY | O_NDELAY);
     if (fd < 0) {
         perror("Could not open");
         return 1;

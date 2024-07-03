@@ -1,13 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <termios.h>
-#include <mbus/mbus.h>
+#include "include/watCal.h"
 
-#define DEVICE "/dev/pts/3" // Change to the slave virtual port
-
+/**
+* configure_serial_port- configure for mbus protocol
+* @fd- file decripter of simulated mbus device (vterminal)
+* Return- nothing
+*/
 void configure_serial_port(int fd) {
     struct termios options;
     tcgetattr(fd, &options);
@@ -26,7 +23,7 @@ void configure_serial_port(int fd) {
 }
 
 int main() {
-    int fd = open(DEVICE, O_RDWR | O_NOCTTY | O_NDELAY);
+    int fd = open(SLAVE, O_RDWR | O_NOCTTY | O_NDELAY);
     if (fd < 0) {
         perror("open");
         return 1;
