@@ -10,7 +10,7 @@
 
 
 /**
-* configure_serial_port- configuration driver
+* configure_serial_port- configuration for mbus protocol
 * @fd: input file decripter
 * Return: nothing
 */
