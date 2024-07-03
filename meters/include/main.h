@@ -8,11 +8,20 @@
 #include <fcntl.h>
 #include <termios.h>
 #include <mbus/mbus.h>
+
 #define SLAVE "/dev/pts/3" // Change to the slave virtual port
 #define MASTER "/dev/pts/2" // Change to master port
 
+//#define R_COMMAND 0x53;
+//#define D_REQUEST 0x52;
+
+typedef enum
+{	RELAY_COMMAND,
+	DATA_REQUEST
+}FrameType;
 
 void configure_serial_port(int fd);
-int send_relay_command(int fd, uint8_t address, uint8_t command);
-
+int send_request(mbus_handle *handle, uint8_t address, FrameType type);
+void initialize_frame(mbus_frame *frame, FrameType type, uint8_t address);
+void initialize_slave(mbus_handle *handle, uint8_t);
 #endif

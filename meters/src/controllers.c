@@ -1,5 +1,38 @@
 #include "../include/main.h"
 
+
+/**
+* initialize_frame- creates frame
+*
+* Return- nothing
+*/
+void initialize_frame(mbus_frame *frame, FrameType type, uint8_t address)
+{
+	memset(frame, 0, sizeof(mbus_frame));
+
+	if (type == RELAY_COMMAND)
+	{
+		frame->start1 = MBUS_FRAME_ACK_START;
+		frame->control = MBUS_CONTROL_MASK_SND_UD;
+		frame->address = address;
+		frame->control_information = MBUS_CONTROL_INFO_DATA_SEND | MBUS_CONTROL_MASK_DIR_M2S;;
+		frame->data_size = 1;
+		frame->data[0] = 0x05;
+		frame->stop = MBUS_FRAME_STOP;
+		printf("break");
+	}
+	else if (type == DATA_REQUEST)
+    {
+        frame->start1 = MBUS_FRAME_ACK_START;
+        frame->control = MBUS_CONTROL_MASK_REQ_UD2 | MBUS_CONTROL_MASK_DIR_M2S;
+        frame->address = address;
+        frame->control_information = MBUS_CONTROL_INFO_DATA_SEND ;
+        frame->data_size = 1;
+        frame->data[0] = 0x05;
+		frame->stop = MBUS_FRAME_STOP;
+    }
+
+}
 /**
 * send_relay_command- sends command to specified slave to master
 * @fd- slave device descriptor
@@ -7,28 +40,18 @@
 * @command- turn off or turn on relay command
 * Return- nothing
 */
-int send_relay_command(int fd, uint8_t address, uint8_t command)
+int send_request(mbus_handle *handle, uint8_t address, FrameType type)
 {
-	mbus_handle *handle;
-	mbus_frame request;
-
-	memset(&request, 0, sizeof(mbus_frame));
-
-	handle = mbus_context_serial(SLAVE);
-	handle->fd = fd;
-	request.start1 = MBUS_FRAME_ACK_START;
-	request.control = MBUS_CONTROL_MASK_SND_UD | MBUS_CONTROL_MASK_DIR_M2S;
-	request.address = address; //address of slave meter
-	request.data_size = 1; //8 bit command
-	request.data[0] = command;
-	request.stop = MBUS_FRAME_STOP;
+	mbus_frame frame;
+	initialize_frame(&frame, type, address);
 
 	//sending frame
-	if (mbus_send_frame(handle, &request) == -1)
+	if (mbus_send_frame(handle, &frame) == -1)
 	{
 		fprintf(stderr, "Failed to send frame\n");
 		return (-1);
 	}
+	mbus_context_free(handle);
 	return (0);
 }
 
@@ -37,7 +60,8 @@ int send_relay_command(int fd, uint8_t address, uint8_t command)
 * @fd: input file descriptor
 * Return: nothing
 */
-void configure_serial_port(int fd) {
+void configure_serial_port(int fd)
+{
     struct termios options;
     tcgetattr(fd, &options);
     cfsetispeed(&options, B2400);
@@ -56,4 +80,8 @@ void configure_serial_port(int fd) {
     options.c_oflag &= ~OPOST;
     tcsetattr(fd, TCSANOW, &options);
 
+}
+
+void initialize_slave(mbus_handle *handle, uint8_t)
+{
 }
