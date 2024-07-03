@@ -13,4 +13,6 @@
 
 
 void configure_serial_port(int fd);
+int send_relay_command(int fd, uint8_t address, uint8_t command);
+
 #endif

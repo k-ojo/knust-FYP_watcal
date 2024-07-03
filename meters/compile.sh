@@ -4,7 +4,7 @@
 
 CC=gcc
 
-CFLAGS="-lmbus"
+CFLAGS="-lmbus -lm"
 
 #files for master object
 

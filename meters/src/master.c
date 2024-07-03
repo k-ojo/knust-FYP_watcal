@@ -11,7 +11,7 @@ int main() {
 
     mbus_frame request;
     memset(&request, 0, sizeof(mbus_frame));
-    request.start1 = 0x10;
+    request.start1 = MBUS_FRAME_ACK_START;
     request.control = 0x5B; // Single character
     request.address = 0x78; // Example address
     request.checksum = 0x5B; // Example checksum
@@ -23,7 +23,7 @@ int main() {
 
         char buffer[256];
         int n = read(fd, buffer, sizeof(buffer));
-        if (n > 0) {
+        if (n > 0 && buffer[0] != '\0') {
             buffer[n] = '\0';
             printf("Received data: %s\n", buffer);
         }
