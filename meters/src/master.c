@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <mbus/mbus.h>
+
 int main() {
     mbus_handle *handle;
 
@@ -8,7 +9,6 @@ int main() {
         fprintf(stderr, "Failed to initialize M-Bus context.\n");
         return -1;
     }
-    mbus_connect(handle);
 
     if (mbus_connect(handle) == -1) {
         fprintf(stderr, "Failed to connect to M-Bus context.\n");
