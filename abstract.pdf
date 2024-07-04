@@ -1,0 +1,7 @@
+In compound houses, energy consumption tracking and accountability is paramount. Due to how important it has become
+especially in this current data driven world, many researchers have come up with technologies like 
+smart meters, Meter-Bus protocol(MBus) among others to make the collection of data from meters easy and 
+seamless. Watcal project seeks to design a system that would make sharing of bills seamles and user intuitive
+leveraging MBus and TCP/IP techologies to ensure that this goal is achieved at a minimal cost. Our goal
+is to ensures that users get feedback on what they consume to enforce responsible energy consumption. Moreover, this 
+project provides a accountability and peace coexistence among individuals in compound houses.

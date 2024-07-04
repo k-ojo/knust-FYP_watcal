@@ -1,5 +1,7 @@
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <mbus/mbus.h>
 
 int main() {
@@ -8,6 +10,8 @@ int main() {
     mbus_frame reply;
     mbus_frame_data frame_data;
     int address = 1;  // Slave address
+    char data[256] = "Example";
+
 
     // Initialize M-Bus context for serial communication
     handle = mbus_context_serial("/tmp/virtualcom1");
@@ -37,12 +41,12 @@ int main() {
     mbus_frame_data_parse(&frame, &frame_data);
 
     // Create a simple response frame
-    mbus_frame_init(&reply);
-    reply.start = MBUS_FRAME_LONG_START;
+    mbus_init(&reply);
+    reply.start1 = MBUS_FRAME_LONG_START;
     reply.control = MBUS_CONTROL_MASK_SND_UD | MBUS_CONTROL_MASK_DIR;
     reply.address = address;
     reply.control_information = 0x08; // example control information
-    reply.data = (unsigned char*) "example data";
+    //reply.data = 0x25;
     reply.data_size = strlen((char*)reply.data);
     mbus_frame_calc_checksum(&reply);
 
