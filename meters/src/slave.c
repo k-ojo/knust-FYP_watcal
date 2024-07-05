@@ -29,8 +29,18 @@ void send_data(mbus_handle *handle) {
     reply_data.data_var.record[0].data[2] = rand() % 256;
     reply_data.data_var.record[0].data[3] = rand() % 256;
 
-    // Set up the M-Bus frame
-    reply.data = reply_data;
+    // Manually set up the M-Bus frame
+    reply.start = MBUS_FRAME_LONG_START;
+    reply.control = 0x73;  // Example control byte, adjust as needed
+    reply.address = 0x01;  // Example address, adjust as needed
+    reply.control_information = 0x72;  // Example CI field, adjust as needed
+
+    // Manually construct the data field
+    reply.data_size = reply_data.data_var.record[0].data_len;
+    memcpy(reply.data, reply_data.data_var.record[0].data, reply.data_size);
+
+    // Calculate the checksum
+    reply.checksum = mbus_calc_checksum(&reply);
 
     // Send the M-Bus frame
     if (mbus_send_frame(handle, &reply) == -1) {
