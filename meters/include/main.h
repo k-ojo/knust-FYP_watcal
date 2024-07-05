@@ -8,6 +8,7 @@
 #include <fcntl.h>
 #include <termios.h>
 #include <mbus/mbus.h>
+#include <curl/curl.h>
 
 #define SLAVE "/dev/pts/8" // Change to the slave virtual port
 #define MASTER "/dev/pts/2" // Change to master port

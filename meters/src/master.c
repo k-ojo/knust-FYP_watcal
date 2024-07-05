@@ -1,9 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <mbus/mbus.h>
-#include <curl/curl.h>
+#include "../include/main.h"
+
 
 void read_data(mbus_handle *handle) {
     mbus_frame reply;
