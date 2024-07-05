@@ -30,11 +30,7 @@ void send_data(mbus_handle *handle) {
     reply_data.data_var.record[0].data[3] = rand() % 256;
 
     // Set up the M-Bus frame
-    if (mbus_frame_data_set(&reply, &reply_data) == -1) {
-        fprintf(stderr, "Failed to set frame data.\n");
-        free(reply_data.data_var.record);
-        return;
-    }
+    reply.data = reply_data;
 
     // Send the M-Bus frame
     if (mbus_send_frame(handle, &reply) == -1) {
