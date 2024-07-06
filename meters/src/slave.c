@@ -4,7 +4,14 @@
 #include <unistd.h>
 #include <mbus/mbus.h>
 
-void simulate_slave(const char *port, int address) {
+/**
+* simulate_slave- handles the slave meter on mbus protocol
+*
+* @port: the device
+* @address: the address of slave
+* Return: 0 on success, -1 on fail
+*/
+int simulate_slave(const char *port, int address) {
     mbus_handle *handle;
     mbus_frame frame;
     mbus_frame reply;
@@ -12,13 +19,13 @@ void simulate_slave(const char *port, int address) {
     handle = mbus_context_serial(port);
     if (handle == NULL) {
         fprintf(stderr, "Failed to initialize M-Bus context.\n");
-        return;
+        return (-1);
     }
 
     if (mbus_connect(handle) == -1) {
         fprintf(stderr, "Failed to connect to M-Bus device.\n");
         mbus_context_free(handle);
-        return;
+        return(-1);
     }
 
     while (1) {
@@ -28,16 +35,16 @@ void simulate_slave(const char *port, int address) {
             continue;
         }
 
-        // Print the received frame
-        mbus_frame_print(&frame);
-
         // Check if the frame is a ping frame or a request frame to the specified address
-        if (frame.address == address && (frame.control == MBUS_CONTROL_MASK_SND_NKE || frame.control == MBUS_CONTROL_MASK_REQ_UD1 || frame.control == MBUS_CONTROL_MASK_REQ_UD2)) {
+        if (frame.address == address && (frame.control == MBUS_CONTROL_MASK_SND_NKE ||
+		frame.control == MBUS_CONTROL_MASK_REQ_UD1 ||
+		frame.control == MBUS_CONTROL_MASK_REQ_UD2) || 1) {
             printf("Request received from master\n");
 
             // Respond with a data frame
             memset(&reply, 0, sizeof(mbus_frame));
-            reply.start = MBUS_FRAME_LONG_START;
+	    reply.type = MBUS_FRAME_TYPE_LONG;
+            reply.start1 = MBUS_FRAME_LONG_START;
             reply.control = MBUS_CONTROL_MASK_RSP_UD;
             reply.address = address;
             reply.control_information = 0x72;  // Data send (SND_UD)
@@ -50,13 +57,16 @@ void simulate_slave(const char *port, int address) {
             reply.data[3] = rand() % 256;  // Example data: random value
             reply.data[4] = rand() % 256;  // Example data: random value
 
-            reply.checksum = mbus_calc_checksum(&reply);
+            reply.checksum = mbus_frame_calc_checksum(&reply);
             reply.stop = MBUS_FRAME_STOP;
+            mbus_frame_print(&reply);
 
             if (mbus_send_frame(handle, &reply) == -1) {
                 fprintf(stderr, "Failed to send data frame.\n");
             }
         }
+
+
         usleep(100000);
     }
 
@@ -64,14 +74,19 @@ void simulate_slave(const char *port, int address) {
     mbus_context_free(handle);
 }
 
-int main(int argc, char *argv[]) {
-    if (argc < 3) {
-        fprintf(stderr, "Usage: %s <port> <address>\n", argv[0]);
+/**
+* main- main program
+* @ac- arguments count
+* @av- argument vector
+*/
+int main(int ac, char *av[]) {
+    if (ac < 3) {
+        fprintf(stderr, "Usage: %s <port> <address>\n", av[0]);
         return 1;
     }
 
-    const char *port = argv[1];
-    int address = atoi(argv[2]);
+    const char *port = av[1];
+    int address = atoi(av[2]);
 
     simulate_slave(port, address);
 
