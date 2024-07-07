@@ -74,6 +74,7 @@ int simulate_slave(const char *port, int address) {
     mbus_context_free(handle);
 }
 
+
 /**
 * main- main program
 * @ac- arguments count

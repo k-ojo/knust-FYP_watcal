@@ -8,7 +8,7 @@ void read_data(mbus_handle *handle) {
     memset(&reply, 0, sizeof(mbus_frame));
     memset(&reply_data, 0, sizeof(mbus_frame_data));
 
-    if (mbus_send_ping_frame(handle, 1) == -1) {
+    if (mbus_send_ping_frame(handle, 9, 1) == -1) {
         fprintf(stderr, "Failed to send M-Bus ping frame.\n");
         return;
     }
