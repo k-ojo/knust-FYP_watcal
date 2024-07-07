@@ -38,7 +38,7 @@ int simulate_slave(const char *port, int address) {
         // Check if the frame is a ping frame or a request frame to the specified address
         if (frame.address == address && (frame.control == MBUS_CONTROL_MASK_SND_NKE ||
 		frame.control == MBUS_CONTROL_MASK_REQ_UD1 ||
-		frame.control == MBUS_CONTROL_MASK_REQ_UD2) || 1) {
+		frame.control == MBUS_CONTROL_MASK_REQ_UD2)) {
             printf("Request received from master\n");
 
             // Respond with a data frame
