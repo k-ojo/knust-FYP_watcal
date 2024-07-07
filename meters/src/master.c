@@ -63,6 +63,7 @@ int main(int argc, char *argv[]) {
     const char *port = argv[1];
     int address = atoi(argv[2]);
 
+
     communicate_with_slave(port, address);
 
     return 0;
