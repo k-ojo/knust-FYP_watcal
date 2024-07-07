@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <mbus/mbus.h>
-
+#include "../include/main.h"
 int communicate_with_slave(const char *port, int address) {
     mbus_handle *handle;
     mbus_frame frame;
@@ -47,6 +42,7 @@ int communicate_with_slave(const char *port, int address) {
 
         printf("Received reply from slave:\n");
         mbus_frame_print(&reply);
+	mbus_frame_print(&frame);
 
         // Sleep for a short period before sending the next frame
         usleep(500000);  // 500 ms

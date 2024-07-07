@@ -11,7 +11,7 @@ MASTER_FILES="src/master.c"
 
 #Files for slave object
 
-SLAVE_FILES="src/slave.c"
+SLAVE_FILES="src/slave.c src/generators.c"
 
 #compile master
 $CC -o master $MASTER_FILES $CFLAGS
