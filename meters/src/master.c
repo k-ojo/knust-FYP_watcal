@@ -17,21 +17,8 @@ int communicate_with_slave(const char *port, int address) {
     }
 
     while (1) {
-        // Create and send a request frame to the slave
-        memset(&frame, 0, sizeof(mbus_frame));
-        frame.type = MBUS_FRAME_TYPE_SHORT;
-        frame.start1 = MBUS_FRAME_SHORT_START;
-        frame.control = MBUS_CONTROL_MASK_REQ_UD1;
-        frame.address = address;
-        frame.stop = MBUS_FRAME_STOP;
-        frame.checksum = mbus_frame_calc_checksum(&frame);
-
-        if (mbus_send_frame(handle, &frame) == -1) {
-            fprintf(stderr, "Failed to send request frame.\n");
-            mbus_disconnect(handle);
-            mbus_context_free(handle);
-            return (-1);
-        }
+        //send request frame
+	mbus_send_request_frame(handle, address);
 
         // Wait for the reply
         if (mbus_recv_frame(handle, &reply) == -1) {
@@ -39,10 +26,8 @@ int communicate_with_slave(const char *port, int address) {
             // Continue to the next iteration to try again
             continue;
         }
-
         printf("Received reply from slave:\n");
         mbus_frame_print(&reply);
-	mbus_frame_print(&frame);
 
         // Sleep for a short period before sending the next frame
         usleep(500000);  // 500 ms
