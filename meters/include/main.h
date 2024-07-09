@@ -20,9 +20,15 @@ typedef enum
 	DATA_REQUEST
 }FrameType;
 
-void initialize_frame(mbus_frame *frame, FrameType type, uint8_t address);
-void configure_serial_port(int fd);
-void send_request(mbus_handle *handle, uint8_t address);
-void initialize_frame(mbus_frame *frame, FrameType type, uint8_t address);
-void initialize_slave(mbus_handle *handle, uint8_t);
+/**
+* watcal_respond - slave action
+* @type- type, whether control or not
+*/
+typedef struct _watCal_respond
+{
+	int type;
+}watCal_respond;
+
+int watCal_set_frame(mbus_frame *, int);
+void watCal_proccess_frame();
 #endif
