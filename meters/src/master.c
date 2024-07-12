@@ -3,6 +3,7 @@ int communicate_with_slave(const char *port, int address) {
     mbus_handle *handle;
     mbus_frame frame;
     mbus_frame reply;
+    mbus_frame_data data;
 
     handle = mbus_context_serial(port);
     if (handle == NULL) {
@@ -29,6 +30,12 @@ int communicate_with_slave(const char *port, int address) {
 
         printf("Received reply from slave:\n");
         mbus_frame_print(&reply);
+	if (mbus_frame_data_parse(&reply, &data))
+	{
+    	    fprintf(stderr, "Failed to parse MBus data: %s\n", mbus_error_str()); // Handle parsing error
+	}
+	mbus_frame_data_print(&data);
+
 
         // Sleep for a short period before sending the next frame
         usleep(500000);  // 500 ms
@@ -49,7 +56,6 @@ int main(int argc, char *argv[]) {
       // Example M-Bus frame data in JSON format
     const char *frame_json = "{\"frameType\":\"short\",\"address\":\"1234\",\"controlField\":\"01\",\"data\":\"ABCDEF\",\"timestamp\":\"2024-07-12T12:00:00Z\",\"checksum\":\"89\",\"length\":10}";
 
-    send_mbus_frame(frame_json);
 
     const char *port = argv[1];
     int address = atoi(argv[2]);

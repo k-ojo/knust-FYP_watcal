@@ -23,17 +23,10 @@ typedef enum
 	DATA_REQUEST
 }FrameType;
 
-typedef struct _mbusReading
-{
-	int room_id;
-	double r_val;
-	char meter_address[16];
-	char serial_number[16];
-	time_t timestamp;
-}_mbusReading;
-
-
+mbus_frame_data* _parse_mbus_frame(mbus_frame* reply, const unsigned char *raw_buff, size_t raw_buff_length);
 int watCal_set_frame(mbus_frame *, int);
 void watCal_proccess_frame(mbus_frame *frame);
 void send_mbus_frame(const char* frame_json);
+char *gen_xml(mbus_frame_data, int normalized);
+void generate_random_hex_data(unsigned char *buffer, size_t length);
 #endif
