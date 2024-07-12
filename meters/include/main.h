@@ -10,7 +10,7 @@
 #include <mbus/mbus.h>
 #include <mosquitto.h>
 #include <curl/curl.h>
-
+#include <cjson/cJSON.h>
 #define MQTT_HOST "localhost"
 #define MQTT_PORT 1883
 #define MQTT_TOPIC "meters/data"

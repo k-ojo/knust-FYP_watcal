@@ -4,7 +4,7 @@
 
 CC=gcc
 
-CFLAGS="-lmbus -lm -lcurl"
+CFLAGS="-lmbus -lm -lcurl -lcjson"
 
 MASTER_FILES="src/master.c src/watCal.c"
 
