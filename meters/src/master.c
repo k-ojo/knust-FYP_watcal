@@ -20,12 +20,13 @@ int communicate_with_slave(const char *port, int address) {
         //send request frame
 	mbus_send_request_frame(handle, address);
 
-        // Wait for the reply
+	// Wait for the reply
         if (mbus_recv_frame(handle, &reply) == -1) {
             fprintf(stderr, "Failed to receive reply frame.\n");
             // Continue to the next iteration to try again
             continue;
         }
+
         printf("Received reply from slave:\n");
         mbus_frame_print(&reply);
 
@@ -44,6 +45,11 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Usage: %s <port> <address>\n", argv[0]);
         return 1;
     }
+
+      // Example M-Bus frame data in JSON format
+    const char *frame_json = "{\"frameType\":\"short\",\"address\":\"1234\",\"controlField\":\"01\",\"data\":\"ABCDEF\",\"timestamp\":\"2024-07-12T12:00:00Z\",\"checksum\":\"89\",\"length\":10}";
+
+    send_mbus_frame(frame_json);
 
     const char *port = argv[1];
     int address = atoi(argv[2]);

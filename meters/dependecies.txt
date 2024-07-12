@@ -7,5 +7,6 @@ tools
 libraries
 	{
 		libmbus,
+		curl,
 	}
 

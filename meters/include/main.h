@@ -9,6 +9,7 @@
 #include <termios.h>
 #include <mbus/mbus.h>
 #include <mosquitto.h>
+#include <curl/curl.h>
 
 #define MQTT_HOST "localhost"
 #define MQTT_PORT 1883
@@ -22,6 +23,17 @@ typedef enum
 	DATA_REQUEST
 }FrameType;
 
+typedef struct _mbusReading
+{
+	int room_id;
+	double r_val;
+	char meter_address[16];
+	char serial_number[16];
+	time_t timestamp;
+}_mbusReading;
+
+
 int watCal_set_frame(mbus_frame *, int);
-void watCal_proccess_frame();
+void watCal_proccess_frame(mbus_frame *frame);
+void send_mbus_frame(const char* frame_json);
 #endif

@@ -22,3 +22,35 @@ int watCal_set_frame(mbus_frame *reply, int address)
             return (1);
 
 }
+
+void watCal_proccess_frame(mbus_frame *frame)
+{
+	mbus_frame_data frame_data;
+}
+
+
+void send_mbus_frame(const char *frame_json) {
+    CURL *curl;
+    CURLcode res;
+
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    curl = curl_easy_init();
+
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://localhost:3000/mbus-frame");
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, frame_json);
+
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Content-Type: application/json");
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        }
+
+        curl_easy_cleanup(curl);
+    }
+
+    curl_global_cleanup();
+}
